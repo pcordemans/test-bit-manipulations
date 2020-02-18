@@ -49,7 +49,7 @@ void testbitclear(void)
 	TEST_ASSERT_EQUAL_HEX32(0xF0, result);
 	bitclear(result, 4);
 	TEST_ASSERT_EQUAL_HEX32(0xE0, result);
-	bitset(result, 7);
+	bitclear(result, 7);
 	TEST_ASSERT_EQUAL_HEX32(0x60, result);
 }
 
