@@ -15,6 +15,6 @@ void mirrornibble(uint8_t &byte);
 
 void ASCIItoBCD(char upper, char lower, uint8_t &result);
 
-void compactbytes(uint8_t *A, uint32_t result);
+void compactbytes(uint8_t *A, uint32_t &result);
 
 #endif

@@ -30,7 +30,7 @@ void ASCIItoBCD(char upper, char lower, uint8_t &result)
     //insert solution here
 }
 
-void compactbytes(uint8_t* A, uint32_t result)
+void compactbytes(uint8_t* A, uint32_t &result)
 {
     //insert solution here
 }
