@@ -12,7 +12,7 @@ TARGET_EXTENSION=.out
 
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
 
-SRC_FILES1= ./unity/unity.cpp ./test/Test_Runner.cpp ./test/Tests.cpp ./main.cpp 
+SRC_FILES1= ./unity/unity.cpp ./test/Test_Runner.cpp ./test/Tests.cpp ./main.cpp ./bitmanipulator.cpp
 
 INC_DIRS=-Isrc 
 SYMBOLS= -DTEST_ON_HOST -DUNITY_INCLUDE_DOUBLE -DUNITY_DOUBLE_VERBOSE -DUNITY_FLOAT_VERBOSE
