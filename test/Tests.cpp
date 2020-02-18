@@ -14,35 +14,70 @@ void tearDown(void)
 
 void testbitset(void) 
 {
-	TEST_ASSERT(true);
+	uint32_t result = 0xF0;
+	bitset(result, 2);
+	TEST_ASSERT_EQUAL_HEX32(0xF4, result);
+	bitset(result, 3);
+	TEST_ASSERT_EQUAL_HEX32(0xFC, result);
+	bitset(result, 8);
+	TEST_ASSERT_EQUAL_HEX32(0x1FC, result);
+	bitset(result, 2);
+	TEST_ASSERT_EQUAL_HEX32(0x1FC, result);
 }
 
 void testbittoggle(void)
 {
-	TEST_ASSERT(true);
+	uint32_t result = 0xF0;
+	bittoggle(result, 2);
+	TEST_ASSERT_EQUAL_HEX32(0xF4, result);
+	bittoggle(result, 2);
+	TEST_ASSERT_EQUAL_HEX32(0xF0, result);
+	bittoggle(result, 3);
+	TEST_ASSERT_EQUAL_HEX32(0xF8, result);
+	bittoggle(result, 3);
+	TEST_ASSERT_EQUAL_HEX32(0xF0, result);
+	bittoggle(result, 7);
+	TEST_ASSERT_EQUAL_HEX32(0x70, result);
+	bittoggle(result, 7);
+	TEST_ASSERT_EQUAL_HEX32(0xF0, result);
 }
 
 void testbitclear(void)
 {
-	TEST_ASSERT(true);
+	uint32_t result = 0xF0;
+	bitclear(result, 2);
+	TEST_ASSERT_EQUAL_HEX32(0xF0, result);
+	bitclear(result, 4);
+	TEST_ASSERT_EQUAL_HEX32(0xE0, result);
+	bitset(result, 7);
+	TEST_ASSERT_EQUAL_HEX32(0x60, result);
 }
 
 void testswapnibble(void)
 {
-	TEST_ASSERT(true);
+	uint8_t result = 0xA5;
+	swapnibble(result);
+	TEST_ASSERT_EQUAL_HEX8(0x5A, result);
 }
 
 void testmirrornibble(void)
 {
-	TEST_ASSERT(true);
+	uint8_t result = 0x05;
+	mirrornibble(result);
+	TEST_ASSERT_EQUAL_HEX8(0xA5, result);
 }
 
 void testASCIItoBCD(void)
 {
-	TEST_ASSERT(true);
+	uint8_t result = 0;
+	ASCIItoBCD('1','2',result);
+	TEST_ASSERT_EQUAL_HEX8(0x12, result);
 }
 
 void testcompactbytes(void)
 {
-	TEST_ASSERT(true);
+	uint32_t result = 0x0;
+	uint8_t A[] = {0x2, 0xB, 0x10, 0xF0};
+	compactbytes(A, result);
+	TEST_ASSERT_EQUAL_HEX32(0xF0100B02, result);
 }

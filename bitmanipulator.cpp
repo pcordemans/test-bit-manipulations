@@ -2,7 +2,7 @@
 
 void bitset(uint32_t &word, uint8_t position)
 {
-    word |= (1 << position);
+    //insert solution here
 }
 
 void bittoggle(uint32_t &word, uint8_t position)
